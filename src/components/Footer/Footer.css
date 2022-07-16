@@ -1,0 +1,26 @@
+.footer-div {
+  margin:70px 250px
+}
+.icon-list ul{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+.icon-list ul li {
+    margin-left:25px;
+}
+.terms{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+.terms p {
+    margin-left: 18px;
+    font-size: 13px;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 13px;
+}
