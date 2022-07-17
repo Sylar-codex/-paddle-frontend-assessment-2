@@ -19,7 +19,7 @@ function Home() {
   };
   const toggleStyle = () => {
     return {
-      right: toggle && "0",
+      right: toggle && "-10.5%",
     };
   };
 

@@ -280,16 +280,16 @@ header {
     flex-direction: column;
     position: fixed;
     height: 100%;
-    width: 100%;
+    width: 110%;
     padding-top: 20px;
     top: 66px;
     right: -100%;
     transition: all 1s;
-    z-index: 10;
+    z-index: -1;
   }
   .nav-list-about ul li {
     margin-bottom: 10%;
-    margin-left: 10%;
+    margin-left: 5%;
   }
   .first-div {
     flex-direction: column;
@@ -309,7 +309,7 @@ header {
     left: 1rem;
   }
   .first-sub-2 h1 {
-    left: 20%;
+    left: 12%;
   }
   .first-sub-2 p {
     margin-top: 27rem;

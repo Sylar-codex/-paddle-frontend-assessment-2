@@ -325,13 +325,13 @@ footer {
     width: 100%;
     padding-top: 20px;
     top: 66px;
-    right: -100%;
+    right: -110%;
     transition: all 1s;
     z-index: 10;
   }
   .nav-list ul li {
     margin-bottom: 10%;
-    margin-left: 10%;
+    margin-left: 5%;
   }
   .text h1 {
     font-size: 40px;
@@ -390,7 +390,7 @@ footer {
   }
   footer {
     height: 7rem;
-    overflow: auto;
+    overflow: hidden;
     margin-top: 100px;
   }
   .home-footer {
@@ -421,5 +421,17 @@ footer {
   }
   .modal form textarea {
     width: 80%;
+  }
+}
+@media (max-width: 380px) {
+  .form-email input {
+    width: 18rem;
+  }
+  .form-email button {
+    width: 8rem;
+  }
+
+  .home-footer {
+    margin: 0px 8px 0;
   }
 }

@@ -3,16 +3,18 @@ import "./About.css";
 import Footer from "../../Footer/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { useNavigate } from "react-router-dom";
 function About() {
   const [toggle, setToggle] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setToggle((T) => (T = !T));
   };
-
   const toggleStyle = () => {
     return {
-      right: toggle && "-1%",
+      right: toggle && "-10.5%",
+      zIndex: toggle && "10",
     };
   };
 
@@ -25,7 +27,7 @@ function About() {
             <ul style={toggleStyle()}>
               <li>About us</li>
               <li>Blog</li>
-              <li>contact us</li>
+              <li onClick={() => navigate("/")}>contact us</li>
             </ul>
           </nav>
           <label
