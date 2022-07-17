@@ -6,14 +6,18 @@
   --dim-gray: #696969;
   --bg-g: rgb(34, 22, 56, 0.8);
   --bg-op: rgba(0, 0, 0, 0.5);
+  --pitch: #7e2a81;
+  --blue-bx: #324a7d;
+  --global-bg: #200043;
 }
 .Home {
-  background: url("../../../images/Background.jpg");
+  background: var(--global-bg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 120vh;
   width: 100vw;
   color: var(--white);
+  overflow-x: hidden;
 }
 
 header {
@@ -24,6 +28,9 @@ header {
 
 .logo {
   margin-left: 30px;
+}
+.menu-bar {
+  display: none;
 }
 .nav-list ul {
   list-style: none;
@@ -48,7 +55,32 @@ header {
 section {
   margin: 20px 250px;
 }
-
+.pitch-circle {
+  background-image: linear-gradient(180deg, var(--pitch), transparent);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 180px;
+}
+.blue-circle {
+  background-image: linear-gradient(180deg, var(--blue-bx), transparent);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 75%;
+  top: 26.5%;
+}
+.orange-circle {
+  background-image: linear-gradient(180deg, #673c3a, transparent);
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 25%;
+  top: 76%;
+}
 .text h1 {
   font-size: 50px;
   text-transform: uppercase;
@@ -122,8 +154,7 @@ section {
   outline: none;
 }
 .form-data input::placeholder {
-  /* color: var(--dim-gray); */
-  color: var(--black);
+  color: var(--dim-gray);
   font-size: 12px;
   font-weight: 600;
 }
@@ -188,8 +219,9 @@ footer {
     opacity: 1;
   }
 }
+
 .modal {
-  background: url("../../../images/Background.jpg");
+  background: var(--global-bg);
   background-repeat: no-repeat;
   background-size: cover;
   color: var(--white);
@@ -198,13 +230,36 @@ footer {
   margin-left: 50%;
   overflow-y: auto;
   padding-bottom: 4rem;
+  position: relative;
+  z-index: 10;
+}
+.blue-mod-circle {
+  background-image: linear-gradient(180deg, var(--blue-bx), transparent);
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  position: absolute;
+  left: 55%;
+  top: 37%;
+}
+.back {
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  color: #5c53d0;
+  z-index: 2 !important;
 }
 .modal form {
+  position: relative;
   display: flex;
   flex-direction: column;
 }
 .modal form h3 {
-  margin: 60px 115px 40px;
+  margin: 150px 115px 40px;
   text-align: center;
   font-size: 28px;
 }
@@ -245,4 +300,126 @@ footer {
   background: var(--blue);
   color: var(--white);
   text-transform: uppercase;
+}
+.modal form button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+@media (max-width: 430px) {
+  section {
+    margin: 20px 8px;
+  }
+  .menu-bar {
+    display: block;
+    float: right;
+  }
+  .menu-bar:hover {
+    cursor: pointer;
+  }
+  .nav-list ul {
+    background: var(--global-bg);
+    flex-direction: column;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    top: 66px;
+    right: -100%;
+    transition: all 1s;
+    z-index: 10;
+  }
+  .nav-list ul li {
+    margin-bottom: 10%;
+    margin-left: 10%;
+  }
+  .text h1 {
+    font-size: 40px;
+  }
+  .text p {
+    margin-left: 15px;
+    width: 22rem;
+  }
+  .box1,
+  .box2,
+  .box3,
+  .box4 {
+    margin-left: 10px;
+  }
+  .form-data {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .form-data input {
+    margin-left: 20px;
+    width: 9rem;
+  }
+
+  .form-email input {
+    width: 22rem;
+  }
+  .form-email button {
+    width: 10rem;
+    font-size: 9px;
+    left: 220px;
+  }
+  footer {
+    overflow: auto;
+    height: 17rem;
+  }
+  .home-footer {
+    background: var(--bg-g);
+    border: 1px solid var(--dim-gray);
+    border-radius: 35rem 35rem 0 0;
+    margin: 90px 40px 0;
+    width: 70rem;
+    height: 35rem;
+  }
+  .pitch-circle {
+    display: none;
+  }
+  .blue-circle {
+    display: none;
+  }
+  .orange-circle {
+    display: none;
+  }
+  .blue-mod-circle {
+    display: none;
+  }
+  footer {
+    height: 7rem;
+    overflow: auto;
+    margin-top: 100px;
+  }
+  .home-footer {
+    border: none;
+    background: none;
+    margin: 0px 30px 0;
+    width: 22rem;
+    height: 35rem;
+  }
+  .modal {
+    width: 100%;
+    margin-left: 0;
+    overflow-y: auto;
+  }
+  .modal form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal form h3 {
+    margin: 150px 50px 40px;
+  }
+  .modal form label {
+    margin: 1rem 3rem;
+  }
+  .modal form input {
+    width: 80%;
+  }
+  .modal form textarea {
+    width: 80%;
+  }
 }

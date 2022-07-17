@@ -29,6 +29,19 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+## Tools used
+
+    This was built with JSX and CSS and a bit of javascript, especially where interactions were need. I also implemented the CSS animations to load the modals. also used font awesome for the icons. Used flex and flexbox.
+
+# usuage of application
+
+This is a landing page which is static,there is a home page which displays the ap is coming soon. But whenever you click on the contact us it opens the modal where you can fill in your contact informations.
+you can also navigate to the about page that tells us more about what is coming soon and what to also expect
+
+# imporovements
+
+if this was not an assessment, I would have the users to be able to interact more with the page
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**

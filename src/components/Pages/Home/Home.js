@@ -2,10 +2,26 @@ import React, { useState } from "react";
 import "./Home.css";
 import Footer from "../../Footer/Footer";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faBars,
+  faTimes,
+} from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [openModal, setOpenModal] = useState(false);
+  const [toggle, setToggle] = useState(false);
   const navigate = useNavigate();
+
+  const handleClick = () => {
+    setToggle((T) => (T = !T));
+  };
+  const toggleStyle = () => {
+    return {
+      right: toggle && "0",
+    };
+  };
 
   return (
     <div>
@@ -16,10 +32,10 @@ function Home() {
         className="Home"
       >
         <header className="header-div">
-          <div className="logo">Logo</div>
+          <div className="logo">METRICKS</div>
           <div className="nav-list">
             <nav>
-              <ul>
+              <ul style={toggleStyle()}>
                 <li onClick={() => navigate("/about")}>About us</li>
                 <li>Blog</li>
                 <li
@@ -31,8 +47,23 @@ function Home() {
                 </li>
               </ul>
             </nav>
+            <label
+              className="menu-bar"
+              onClick={() => {
+                handleClick();
+              }}
+            >
+              {toggle ? (
+                <FontAwesomeIcon icon={faTimes} size="2x" />
+              ) : (
+                <FontAwesomeIcon icon={faBars} size="2x" />
+              )}
+            </label>
           </div>
         </header>
+        <div className="pitch-circle"></div>
+        <div className="blue-circle"></div>
+        <div className="orange-circle"></div>
         <section>
           <div className="text">
             <h1>something awesome is coming soon</h1>
@@ -89,44 +120,43 @@ function Home() {
         </footer>
       </div>
       {openModal && (
-        <div
-          // style={{ opacity: openModal ? "10" : "0" }}
-          className={"modal-container"}
-        >
+        <div className="modal-container">
           <div className="modal">
+            <div className="blue-mod-circle"></div>
             <button
+              className="back"
               onClick={() => {
                 setOpenModal(false);
               }}
             >
-              back
+              <FontAwesomeIcon size="2x" icon={faArrowRight} />
             </button>
             <form>
               <h3>
                 Hey, we are still in the works, but you can send us a message
               </h3>
-              <label for="first">First name</label>
+              <label htmlFor="first">First name</label>
               <input
                 id="first"
                 type="text"
                 name="first_name"
                 placeholder="Enter your first name"
               />
-              <label for="last">Last name</label>
+              <label htmlFor="last">Last name</label>
               <input
                 id="last"
                 type="text"
                 name="last_name"
                 placeholder="Enter your last name"
               />
-              <label for="mail">Email address</label>
+              <label htmlFor="mail">Email address</label>
               <input
                 id="mail"
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
               />
-              <label for="help">tell us what you need help with:</label>
+              <label htmlFor="help">tell us what you need help with:</label>
               <textarea
                 id="help"
                 type="text"
